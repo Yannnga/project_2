@@ -1,5 +1,6 @@
 import pygame
 from settings import Settings
+from celestial_body import CelestialBody
 
 class SolarSystemExplorer:
 
@@ -24,6 +25,8 @@ class SolarSystemExplorer:
         self.clock = pygame.time.Clock()
         self.running = True
 
+        self.earth = CelestialBody("Earth", (70, 130, 255), 8)
+
     def run_game(self):
         while self.running:
             self._check_events()
@@ -39,6 +42,8 @@ class SolarSystemExplorer:
 
     def _update_screen(self):
         self.screen.blit(self.bg_image, (0, 0))
+        self.earth.draw_body(self.screen)
+        
         pygame.display.flip()
 
 
