@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 
 class CelestialBody(Sprite):
     #A class to represent a celestial body.
-    def __init__(self, name: str, color: tuple, radius: int):
+    def __init__(self, name: str, color: tuple, radius: int, x: int, y: int):
         super().__init__()
         self.name = name
         self.color = color
@@ -31,7 +31,7 @@ class CelestialBody(Sprite):
         # Set initial position
         self.rect = self.image.get_rect()
         #print("Image after rect creation:", self.image)
-        self.rect.center = (500, 300)
+        self.rect.center = (x, y)
 
     def draw_body(self, screen):
         #Draw the celestial body on the screen.
