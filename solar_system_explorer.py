@@ -32,6 +32,7 @@ class SolarSystemExplorer:
     def run_game(self):
         while self.running:
             self._check_events()
+            self.solar_system.update()
             self._update_screen()
             self.clock.tick(self.settings.FPS)
 
