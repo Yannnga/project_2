@@ -1,0 +1,38 @@
+{
+    "Sun": {
+    "radius_km": 696340,
+    "orbital_period": null
+    },
+    "Mercury": {
+        "radius_km": 2439.7,
+        "orbital_period": 0.241
+    },
+    "Venus": {
+        "radius_km": 6051.8,
+        "orbital_period": 0.615
+    },
+    "Earth": {
+        "radius_km": 6371,
+        "orbital_period": 1.0
+    },
+    "Mars": {
+        "radius_km": 3389.5,
+        "orbital_period": 1.881
+    },
+    "Jupiter": {
+        "radius_km": 69911,
+        "orbital_period": 11.86
+    },
+    "Saturn": {
+        "radius_km": 58232,
+        "orbital_period": 29.46
+    },
+    "Uranus": {
+        "radius_km": 25362,
+        "orbital_period": 84.02
+    },
+    "Neptune": {
+        "radius_km": 24622,
+        "orbital_period": 164.8
+    }
+}

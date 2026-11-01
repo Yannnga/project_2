@@ -1,4 +1,6 @@
 import pygame
+import json
+from pathlib import Path
 from settings import Settings
 #from celestial_body import CelestialBody
 from solar_system import SolarSystem
@@ -27,8 +29,13 @@ class SolarSystemExplorer:
         self.running = True
 
         self.solar_system = SolarSystem(self)
+        self.selected_body = None
+        self.font = pygame.font.Font(None, 32)
+        data_file = Path(__file__).parent / "data" / "planets.json"
 
-        
+        with open(data_file, "r") as f:
+            self.planet_data = json.load(f)
+
     def run_game(self):
         while self.running:
             self._check_events()
@@ -48,12 +55,29 @@ class SolarSystemExplorer:
 
     def _check_mouse_events(self, event):
         if event.button == 1:
-            print("Mouse clicked at:", event.pos)
+            self.selected_body = self.solar_system.check_body_click(event.pos)
+
+    def _draw_body_info(self):
+        if self.selected_body:
+            name = self.selected_body.name
+
+            if name in self.planet_data:
+                data = self.planet_data[name]
+                radius = data["radius_km"]
+                period = data["orbital_period"]
+
+                info_text = f"Name: {name}, Radius: {radius} km, Orbital Period: {period} years"
+            else:
+                info_text = f"Name: {name}"
+                
+            text_surface = self.font.render(info_text, True, (255, 255, 255))
+            self.screen.blit(text_surface, (10, 10))
 
     def _update_screen(self):
         self.screen.blit(self.bg_image, (0, 0))
         #self.earth.draw_body(self.screen)
         self.solar_system.draw()
+        self._draw_body_info()
 
         
         pygame.display.flip()

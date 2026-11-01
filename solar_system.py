@@ -1,4 +1,6 @@
 import pygame
+import json
+from pathlib import Path
 from celestial_body import CelestialBody
 
 class SolarSystem:
@@ -22,7 +24,7 @@ class SolarSystem:
         self.sun = CelestialBody("Sun", (255, 251, 0), 30, 450, 300) #Gold
         self.bodies.add(self.sun)
 
-        self.mercury = CelestialBody("Mercury", (190, 190, 190), 4, 450 + mercury_orbit, 300, 0.012 / 0.241) #Grey
+        self.mercury = CelestialBody("Mercury", (190, 190, 190), 4, 450 + mercury_orbit, 300, 0.005 / 0.241) #Grey
         self.bodies.add(self.mercury)
 
         self.venus = CelestialBody("Venus", (255, 236, 139), 7, 450 + venus_orbit, 300, 0.012 / 0.615) #light gold
@@ -64,6 +66,14 @@ class SolarSystem:
         #Update all celestial bodies.
         for body in self.bodies:
             body.update()
+
+    def check_body_click(self, mouse_pos):
+    # Check if a celestial body was clicked.
+        for body in self.bodies:
+            if body.rect.collidepoint(mouse_pos):
+                print("Selected:", body.name)
+                return body
+        return None
 
     
             
