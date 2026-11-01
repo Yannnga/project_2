@@ -22,28 +22,28 @@ class SolarSystem:
         self.sun = CelestialBody("Sun", (255, 251, 0), 30, 450, 300) #Gold
         self.bodies.add(self.sun)
 
-        self.mercury = CelestialBody("Mercury", (190, 190, 190), 4, 450 + mercury_orbit, 300) #Grey
+        self.mercury = CelestialBody("Mercury", (190, 190, 190), 4, 450 + mercury_orbit, 300, 0.012 / 0.241) #Grey
         self.bodies.add(self.mercury)
 
-        self.venus = CelestialBody("Venus", (255, 236, 139), 7, 450 + venus_orbit, 300 ) #light gold
+        self.venus = CelestialBody("Venus", (255, 236, 139), 7, 450 + venus_orbit, 300, 0.012 / 0.615) #light gold
         self.bodies.add(self.venus)
 
-        self.earth = CelestialBody("Earth", (58, 95, 205), 8, 450 + earth_orbit, 300) #blue
+        self.earth = CelestialBody("Earth", (58, 95, 205), 8, 450 + earth_orbit, 300, 0.012 / 1.0) #blue
         self.bodies.add(self.earth)
 
-        self.mars = CelestialBody("Mars", (178, 34, 34), 5, 450 + mars_orbit, 300) #red brown
+        self.mars = CelestialBody("Mars", (178, 34, 34), 5, 450 + mars_orbit, 300, 0.012 / 1.881) #red brown
         self.bodies.add(self.mars)
 
-        self.jupiter = CelestialBody("Jupiter", (210, 180, 140), 20, 450 + jupiter_orbit, 300) #light brown
+        self.jupiter = CelestialBody("Jupiter", (210, 180, 140), 20, 450 + jupiter_orbit, 300, 0.012 / 11.86) #light brown
         self.bodies.add(self.jupiter)
 
-        self.saturn = CelestialBody("Saturn", (255, 236, 139), 17, 450 + saturn_orbit, 300)  #light gold
+        self.saturn = CelestialBody("Saturn", (255, 236, 139), 17, 450 + saturn_orbit, 300, 0.012 / 29.46)  #light gold
         self.bodies.add(self.saturn)
 
-        self.uranus = CelestialBody("Uranus", (244, 255, 255), 12, 450 + uranus_orbit, 300) # light blue 
+        self.uranus = CelestialBody("Uranus", (244, 255, 255), 12, 450 + uranus_orbit, 300, 0.012 / 84.0) # light blue 
         self.bodies.add(self.uranus)
 
-        self.neptune = CelestialBody("Neptune", (170, 216, 230), 11, 450 + neptune_orbit, 300) #light bule
+        self.neptune = CelestialBody("Neptune", (170, 216, 230), 11, 450 + neptune_orbit, 300, 0.012 / 164.8) #light bule
         self.bodies.add(self.neptune)
 
         print("Number of celestial bodies:", len(self.bodies))

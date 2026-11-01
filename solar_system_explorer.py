@@ -43,6 +43,13 @@ class SolarSystemExplorer:
             if event.type == pygame.QUIT:
                 self.running = False
 
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                self._check_mouse_events(event)
+
+    def _check_mouse_events(self, event):
+        if event.button == 1:
+            print("Mouse clicked at:", event.pos)
+
     def _update_screen(self):
         self.screen.blit(self.bg_image, (0, 0))
         #self.earth.draw_body(self.screen)

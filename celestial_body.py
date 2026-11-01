@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 
 class CelestialBody(Sprite):
     #A class to represent a celestial body.
-    def __init__(self, name: str, color: tuple, radius: int, x: int, y: int):
+    def __init__(self, name: str, color: tuple, radius: int, x: int, y: int, orbit_speed: float = 0):
         super().__init__()
         self.name = name
         self.color = color
@@ -34,6 +34,7 @@ class CelestialBody(Sprite):
         self.rect.center = (x, y)
         self.orbit_radius = x - 450
         self.angle = 0
+        self.orbit_speed = orbit_speed
 
     def draw_body(self, screen):
         #Draw the celestial body on the screen.
@@ -42,7 +43,7 @@ class CelestialBody(Sprite):
     def update(self):
         #Update the position of the celestial body
         if self.orbit_radius > 0:
-            self.angle += 0.01
+            self.angle += self.orbit_speed
 
             x = 450 + self.orbit_radius * math.cos(self.angle)
             y = 300 + self.orbit_radius * 0.5 * math.sin(self.angle)
