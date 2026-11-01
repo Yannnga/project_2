@@ -32,9 +32,15 @@ class SolarSystemExplorer:
         self.selected_body = None
         self.font = pygame.font.Font(None, 32)
         data_file = Path(__file__).parent / "data" / "planets.json"
+        
+        #JSON Exception Handling
+        try:
+            with open(data_file, "r") as f:
+                self.planet_data = json.load(f)
+        except (OSError, json.JSONDecodeError) as e:
+            print("Error loading planetary data:", e)
+            self.planet_data = {}
 
-        with open(data_file, "r") as f:
-            self.planet_data = json.load(f)
 
     def run_game(self):
         while self.running:
@@ -69,7 +75,7 @@ class SolarSystemExplorer:
                 info_text = f"Name: {name}, Radius: {radius} km, Orbital Period: {period} years"
             else:
                 info_text = f"Name: {name}"
-                
+
             text_surface = self.font.render(info_text, True, (255, 255, 255))
             self.screen.blit(text_surface, (10, 10))
 
