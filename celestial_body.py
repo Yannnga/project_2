@@ -1,3 +1,11 @@
+"""
+Program: Solar System Explorer - Celestial Body
+Author: Xinyi Yang
+Purpose: Define celestial bodies and their orbital movement in the Solar System.
+Starter/resources: Python Crash Course, Pygame documentation
+Date: November 2026
+"""
+
 import pygame
 import math
 from pygame.sprite import Sprite

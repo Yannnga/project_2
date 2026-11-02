@@ -1,3 +1,10 @@
+"""
+Program: Solar System Explorer - Settings
+Author: Xinyi Yang
+Purpose: Store the settings for the Solar System Explorer, including screen size, FPS, and background.
+Starter/resources: Python Crash Course
+Date: November 2026
+"""
 from pathlib import Path
 
 class Settings:

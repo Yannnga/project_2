@@ -1,3 +1,11 @@
+"""
+Program: Solar System Explorer - Solar System
+Author: Xinyi Yang
+Purpose: Create and manage the Sun and eight planets and their orbital movement.
+Starter/resources: Python Crash Course
+Date: November 2026
+"""
+
 import pygame
 import json
 from pathlib import Path
