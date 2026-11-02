@@ -1,5 +1,5 @@
 # Exoplanet Explorer
-Project video link: 
+Project video link: https://youtu.be/Bs_a-yx1cgY
 
 ## Project Description
 Solar System Explorer" is a Python program developed using Pygame that allows users to explore the solar system. Users can view the Sun and the eight planets, observe the planets as they orbit the Sun, and click on various celestial bodies to learn basic information about them.
